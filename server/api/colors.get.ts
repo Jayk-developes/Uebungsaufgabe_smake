@@ -16,7 +16,7 @@ function generateColors(count: number) {
             }
         )
     }
-
+    console.log(colors)
     return colors
 }
 
