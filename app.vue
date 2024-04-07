@@ -31,6 +31,7 @@ body, root {
 
 .grid_container {
   display: grid;
+  align-content: center;
   gap: 1rem;
 
   width: fill-available;
@@ -43,6 +44,19 @@ body, root {
     "nav         nav    nav"
     "left_select tshirt right_select"
     "b_nav       b_nav  b_nav";
+
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: .5fr 1fr .5fr;
+  }
+
+  @media only screen and (max-width: 600px) {
+    grid-template-rows: 10% 30% 50% 10%;
+    grid-template-areas:
+    "nav         nav    nav"
+    "left_select .      right_select"
+    "tshirt      tshirt tshirt    "
+    "b_nav       b_nav  b_nav";
+  }
 }
 
 .nav {
@@ -58,6 +72,7 @@ body, root {
 
 .tshirt {
   grid-area: tshirt;
+
 }
 
 .right_select {

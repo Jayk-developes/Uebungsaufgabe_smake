@@ -54,13 +54,12 @@ onMounted(() => {
 </script>
 
 <template>
-
-  <div id="tshirt" class="left-select">
+  <div id="tshirt" class="left-select tshirt">
     <TShirtSVG/>
 
   </div>
 
-  <div class="flex justify-center" id="orderSummaryContainer">
+  <div class="flex justify-center left_select" id="orderSummaryContainer">
     <div class="checkoutSummary" id="checkoutSummary">
       <div id="orderHeader" class="orderHeader">Order Summary</div>
       <div id="orderSummary" class="orderSummary">
@@ -84,7 +83,7 @@ onMounted(() => {
     </div>
   </div>
 
-  <div class="flex justify-center" id="placeOrder">
+  <div class="flex justify-center right_select" id="placeOrder">
     <div id="checkout" class="checkoutSummary">
       <div id="checkoutHeader" class="orderHeader -mt-1">Complete Order</div>
       <div class="orderSummary" id="checkoutInfos">
@@ -93,7 +92,7 @@ onMounted(() => {
         <input type="text" name="Address" id="Address" placeholder="Enter your Address!">
       </div>
       <div class="orderTotal" id="placeOrder">
-        <input type="button" value="Place Order" @click="placeOrder" id="submit">
+        <input type="button" class="mt-4 mb-4" value="Place Order" @click="placeOrder" id="submit">
       </div>
 
     </div>
@@ -101,6 +100,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
+
 
 .checkoutSummary {
   background-color: transparent;
@@ -116,10 +116,18 @@ onMounted(() => {
   display: grid;
   grid-template-rows: 10% 85% 5%;
 
+  @media only screen and (max-width: 600px) {
+    width: fill-available;
+  }
+
   .orderHeader {
     font-size: 1.5rem;
     font-weight: 500;
     border-bottom: 1px solid #4f4;
+
+    @media screen and (max-width: 800px) {
+      font-size: 1rem;
+    }
   }
 
   .orderSummary {
@@ -130,9 +138,18 @@ onMounted(() => {
     margin-top: 1rem;
     border-bottom: 1px solid #4f4;
 
+    @media only screen and (max-width: 600px) {
+      width: fill-available;
+      margin-bottom: 0 !important;
+    }
+
     div {
       font-size: 1.2rem;
       font-weight: 500;
+
+      @media screen and (max-width: 800px) {
+        font-size: .8rem;
+      }
     }
 
     input {
@@ -149,6 +166,9 @@ onMounted(() => {
     align-items: center;
     font-size: 1.5rem;
     font-weight: 500;
+    @media screen and (max-width: 800px) {
+      font-size: 1rem;
+    }
 
     input {
       box-shadow: 0 .25rem .5rem 0 #0004;
@@ -164,6 +184,14 @@ onMounted(() => {
     input:hover {
       background-color: #4f4;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .left_select, .right_select {
+    white-space: normal;
+    width: 100%;
+    margin-bottom: 0 !important;
   }
 }
 

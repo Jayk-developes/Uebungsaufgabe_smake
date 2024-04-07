@@ -16,6 +16,7 @@ onMounted(() => {
 
   imageOnShirt.style.width = (tshirt.getBoundingClientRect().width * 0.33) + "px"
   imageContainer.style.width = (tshirt.getBoundingClientRect().width * 0.33) + "px"
+  imageContainer.style.top = tshirt.getBoundingClientRect().height * -0.67 + "px"
   imageOnShirt.setAttribute("src", store.data.img)
 
   watch(store.data, (oldV, newV) => {

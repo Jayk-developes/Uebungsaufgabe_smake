@@ -97,6 +97,17 @@ const setImage = (img: string) => {
   background-color: #eee;
   border-radius: .25rem;
   box-shadow: 0 .125rem .33rem 0 #0004;
+
+
+  @media only screen and (max-width: 800px) {
+    width: 40%;
+  }
+
+    @media only screen and (max-width: 600px) {
+    margin-left: -3rem;
+    margin-right: 3rem;
+    width: 80%;
+  }
 }
 
 #top_button_2, #bottom_button_2 {
